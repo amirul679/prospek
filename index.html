@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Proton Prospek</title>
+   <link rel="stylesheet" href="styles.css">
+   <style>
+      /* Tombol WhatsApp dan Tombol Submit */
+      input[type="submit"],
+      .whatsapp-btn {
+        display: inline-block;
+        padding: 0.3rem;
+        width: 400px; /* Sesuaikan lebar tombol sesuai kebutuhan */
+        height: 30px; /* Sesuaikan tinggi tombol sesuai kebutuhan */
+        margin-top: 1.5rem;
+        border-radius: 2%;
+        align-items: center;
+        text-align: center;
+        background-color: #1de17c;
+        color: #fff;
+        text-decoration: none;
+        border: none;
+        box-sizing: content-box;
+        border-radius: 1px;
+        cursor: pointer;
+      }
+
+      /* Hover state */
+      input[type="submit"]:hover,
+      .whatsapp-btn:hover {
+        background-color: #0056b3;
+      }
+   </style>
+</head>
+<body>
+   <header>
+       <div class="logo">
+           <img src="img/hero-image.jpg" alt="Proton Logo">
+       </div>
+       <nav>
+           <ul>
+               <li><a href="#features">Futures</a></li>
+               <li><a href="#testimonials">Feedback</a></li>
+               <li><a href="#contact">Contact Us</a></li>
+           </ul>
+       </nav>
+   </header>
+   
+   <section id="hero">
+       <div class="hero-content">
+           <h1>ZARIQAFRO</h1>
+           <p>Mencipta masa depan dengan teknologi....</p>
+           <a href="#contact" class="btn">Hubungi Kami</a>
+       </div>
+       <div class="hero-image">
+           <img src="img/hero-image.jpg" alt="Proton">
+       </div>
+   </section>
+   
+   <!-- Formulir untuk detail pelanggan -->
+   <section id="contact">
+       <h2>Isi Maklumat Anda</h2>
+       <form action="https://script.google.com/macros/s/AKfycbxtqF6vZD88FXGj-umhd7IgOUKfBy0N1yn3I9iQZiGHYcuAFwygCg8j1CwVzdrrTM4X/exec" method="POST">
+           <div class="form-group">
+               <label for="location">Lokasi :</label>
+               <select id="location" name="entry.1234567890" required>
+                   <option value="">Pilih negeri</option>
+                   <option value="Johor">Johor</option>
+                   <option value="Kedah">Kedah</option>
+                   <option value="Kelantan">Kelantan</option>
+                   <option value="Melaka">Melaka</option>
+                   <option value="Negeri Sembilan">Negeri Sembilan</option>
+                   <option value="Pahang">Pahang</option>
+                   <option value="Perak">Perak</option>
+                   <option value="Perlis">Perlis</option>
+                   <option value="Pulau Pinang">Pulau Pinang</option>
+                   <option value="Sabah">Sabah</option>
+                   <option value="Sarawak">Sarawak</option>
+                   <option value="Selangor">Selangor</option>
+                   <option value="Terengganu">Terengganu</option>
+                   <option value="Wilayah Persekutuan Kuala Lumpur">Wilayah Persekutuan Kuala Lumpur</option>
+                   <option value="Wilayah Persekutuan Labuan">Wilayah Persekutuan Labuan</option>
+                   <option value="Wilayah Persekutuan Putrajaya">Wilayah Persekutuan Putrajaya</option>
+               </select>
+           </div>
+           <div class="form-group">
+               <label for="nama">Nama :</label>
+               <input type="text" id="nama" name="entry.0987654321" required>
+           </div>
+           <div class="form-group">
+               <label for="telefon">Nombor Telefon :</label>
+               <input type="tel" id="telefon" name="entry.1357924680" pattern="[6][0-9]{3}[0-9]{7,8}" placeholder="Contoh: 60123456789" required>
+           </div>
+           <button type="submit" class="whatsapp-btn">Submit</button>
+       </form>
+       <a href="https://wa.me/60188744910?text=Saya berminat untuk membuat tempahan kereta" class="whatsapp-btn">WhatsApp</a>
+   </section>
+   <!-- Bagian lain dari halaman web -->
+   
+   <footer>
+       <p>Hak Cipta © 2024 Persendirian</p>
+   </footer>
+</body>
+</html>
