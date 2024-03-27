@@ -6,17 +6,119 @@
  <title>Proton Prospek</title>
  <link rel="stylesheet" href="styles.css">
  <style>
-   /* Tambahkan gaya CSS sesuai kebutuhan Anda */
+   /* Gaya CSS */
+   body {
+     font-family: Arial, sans-serif;
+     margin: 0;
+     padding: 0;
+   }
+   header {
+     background-color: #13273a;
+     color: #fff;
+     padding: 20px 0;
+   }
+   header .logo {
+     display: inline-block;
+     margin-left: 10px;
+   }
+   header .logo img {
+     width: 150px;
+     height: auto;
+   }
+   nav ul {
+     list-style-type: none;
+     margin: 0;
+     padding: 0;
+   }
+   nav ul li {
+     display: inline-block;
+     margin-right: 20px;
+   }
+   nav ul li a {
+     color: #fff;
+     text-decoration: none;
+   }
+   nav ul li a:hover {
+     text-decoration: underline;
+   }
+   #hero {
+     background-color: #E9EFF3;
+     padding: 50px 0;
+     text-align: center;
+   }
+   #hero h1 {
+     color: #163A5D;
+     font-size: 3em;
+     margin-bottom: 10px;
+   }
+   #hero p {
+     color: #555;
+     font-size: 1.2em;
+     margin-bottom: 20px;
+   }
+   .btn {
+     background-color: #125f1e;
+     color: #fff;
+     text-decoration: none;
+     padding: 10px 20px;
+     border-radius: 5px;
+     transition: background-color 0.3s ease;
+   }
+   .btn:hover {
+     background-color: #36a047;
+   }
+   #contact {
+     background-color: #fff;
+     padding: 50px 0;
+   }
+   #contact h2 {
+     color: #163A5D;
+     font-size: 2em;
+     margin-bottom: 20px;
+     text-align: center;
+   }
+   form {
+     max-width: 600px;
+     margin: 0 auto;
+   }
+   .form-group {
+     margin-bottom: 20px;
+   }
+   label {
+     font-weight: bold;
+   }
+   input[type="text"], select {
+     width: 100%;
+     padding: 10px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     box-sizing: border-box;
+   }
+   input[type="submit"] {
+     background-color: #163A5D;
+     color: #fff;
+     border: none;
+     padding: 10px 20px;
+     border-radius: 5px;
+     cursor: pointer;
+     transition: background-color 0.3s ease;
+   }
+   input[type="submit"]:hover {
+     background-color: #0e2538;
+   }
    .whatsapp-btn {
-     background-color: #41b151; /* Ganti dengan warna yang Anda inginkan */
+     background-color: #41b151;
+     color: #fff;
+     text-decoration: none;
+     padding: 10px 20px;
+     border-radius: 5px;
+     transition: background-color 0.3s ease;
    }
-   .submit-btn {
-     background-color: #ccc; /* Warna kelabu */
-     color: #000; /* Warna teks hitam */
+   .whatsapp-btn:hover {
+     background-color: #36a047;
    }
-   .submit-btn:hover {
-     background-color: #000; /* Warna hitam saat tombol disorot */
-     color: #fff; /* Warna teks putih saat tombol disorot */
+   .loading-icon {
+     display: none;
    }
  </style>
 </head>
@@ -27,9 +129,9 @@
    </div>
    <nav>
      <ul>
-       <li><a href="#features">Futures</a></li>
-       <li><a href="#testimonials">Feedback</a></li>
-       <li><a href="#contact">Contact Us</a></li>
+       <li><a href="#features">Fitur</a></li>
+       <li><a href="#testimonials">Ulasan</a></li>
+       <li><a href="#contact">Hubungi Kami</a></li>
      </ul>
    </nav>
  </header>
@@ -59,10 +161,8 @@
            <option value="Perak">Perak</option>
            <option value="Pahang">Pahang</option>
            <option value="Perlis">Perlis</option>
-           <option value="Wilayah Persekutuan K.Lumpur">Wilayah Persekutuan K.Lumpur</K></option>
-           <option value="Wilayah Pesekutuan Putrajaya">Wilayah Persekutuan Putrajaya</option>
-
-           <!-- Tambahkan pilihan negeri lainnya di sini -->
+           <option value="Wilayah Persekutuan K.Lumpur">Wilayah Persekutuan K.Lumpur</option>
+           <option value="Wilayah Persekutuan Putrajaya">Wilayah Persekutuan Putrajaya</option>
          </select>
        </div>
        <div class="form-group">
@@ -72,13 +172,13 @@
        <div class="form-group">
          <label for="telefon">Nombor Telefon :</label>
          <!-- Contoh untuk menambahkan nombor telefon yang benar -->
-         <input type="tel" id="telefon" name="Nombor_Telefon" pattern="[6][0-9]{3}[0-9]{7,8}" placeholder="Format: 601234567890">
+         <input type="tel" id="telefon" name="Nombor_Telefon" pattern="[6][0-9]{3}[0-9]{7,8}" placeholder="Format: 601234567890" required>
        </div>
        <input type="submit" value="Submit" class="submit-btn">
      </form>
      <!-- Menambahkan ikon loading ke dalam tombol WhatsApp -->
      <a href="#" id="whatsapp-btn" class="whatsapp-btn">
-       WhatsApp Now <img id="loading-icon" src="loading.gif" style="display: none;">
+       WhatsApp Now <img id="loading-icon" src="loading.gif" class="loading-icon">
      </a>
    </section>
  </main>
@@ -86,40 +186,41 @@
    <p>Hak Cipta © 2024 Persendirian</p>
  </footer>
  <script>
-   const scriptURL = 'https://script.google.com/macros/s/AKfycbyNMKDr2Khex8UprUXyMZ_3XPWMhY83Squ0UVCq3inCBmtgQrtZSIU_Avl0EKK-1Gmq/exec';
-   const form = document.getElementById('contact-form');
-   const whatsappBtn = document.getElementById('whatsapp-btn');
-   const loadingIcon = document.getElementById('loading-icon');
-   form.addEventListener('submit', e => {
-     e.preventDefault();
-     const formData = new FormData(form);
-     formData.append('Timestamp', new Date()); // Menambah timestamp ke dalam data yang dihantar
-     loadingIcon.style.display = 'inline'; // Tampilkan ikon loading
-     whatsappBtn.disabled = true; // Matikan tombol WhatsApp sementara
-     fetch(scriptURL, { method: 'POST', body: formData })
-       .then(response => {
-         loadingIcon.style.display = 'none'; // Sembunyikan ikon loading setelah selesai
-         whatsappBtn.disabled = false; // Aktifkan kembali tombol WhatsApp
-         if (response.ok) {
-           alert('Pendaftaran Anda Berjaya!');
-           form.reset(); // Reset formulir setelah berhasil
-         } else {
-           alert('Pendaftaran tidak berjaya. Sila cuba lagi.');
-         }
-       })
-       .catch(error => {
-         loadingIcon.style.display = 'none'; // Sembunyikan ikon loading jika terjadi kesalahan
-         whatsappBtn.disabled = false; // Aktifkan kembali tombol WhatsApp
-         console.error('Error!', error.message);
-       });
-   });
-   document.getElementById('whatsapp-btn').addEventListener('click', function(event) {
-     event.preventDefault(); // Menghentikan tindakan default
-     // Teks pesan yang ingin Anda kirimkan
-     var message = encodeURIComponent("Saya ingin membuat tempahan kereta");
-     // Redirect ke WhatsApp dengan pesan yang ditentukan
-     window.location.href = "https://wa.me/60188744910?text=" + message;
-   });
- </script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyNMKDr2Khex8UprUXyMZ_3XPWMhY83Squ0UVCq3inCBmtgQrtZSIU_Avl0EKK-1Gmq/exec';
+  const form = document.getElementById('contact-form');
+  const whatsappBtn = document.getElementById('whatsapp-btn');
+  const loadingIcon = document.getElementById('loading-icon');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    formData.append('Timestamp', new Date()); // Menambah timestamp ke dalam data yang dihantar
+    loadingIcon.style.display = 'inline'; // Tampilkan ikon loading
+    whatsappBtn.disabled = true; // Matikan tombol WhatsApp sementara
+    fetch(scriptURL, { method: 'POST', body: formData })
+      .then(response => {
+        loadingIcon.style.display = 'none'; // Sembunyikan ikon loading setelah selesai
+        whatsappBtn.disabled = false; // Aktifkan kembali tombol WhatsApp
+        if (response.ok) {
+          alert('Pendaftaran Anda Berjaya!');
+          form.reset(); // Reset formulir setelah berhasil
+        } else {
+          alert('Pendaftaran tidak berjaya. Sila cuba lagi.');
+        }
+      })
+      .catch(error => {
+        loadingIcon.style.display = 'none'; // Sembunyikan ikon loading jika terjadi kesalahan
+        whatsappBtn.disabled = false; // Aktifkan kembali tombol WhatsApp
+        console.error('Error!', error.message);
+      });
+  });
+  document.getElementById('whatsapp-btn').addEventListener('click', function(event) {
+    event.preventDefault(); // Menghentikan tindakan default
+    // Teks pesan yang ingin Anda kirimkan
+    var message = encodeURIComponent("Saya ingin membuat tempahan kereta");
+    // Redirect ke WhatsApp dengan pesan yang ditentukan
+    window.location.href = "https://wa.me/60188744910?text=" + message;
+  });
+</script>
 </body>
 </html>
+
