@@ -6,30 +6,115 @@
    <title>Proton Prospek</title>
    <link rel="stylesheet" href="styles.css">
    <style>
-      /* Tombol WhatsApp dan Tombol Submit */
+      /* Reset CSS */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Body styling */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Header styling */
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo img {
+        width: 100px;
+      }
+
+      nav ul {
+        list-style-type: none;
+      }
+
+      nav ul li {
+        display: inline;
+        margin-right: 20px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #fff;
+      }
+
+      /* Main content styling */
+      main {
+        padding: 2rem;
+      }
+
+      /* Formulir styling */
+      form {
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-group {
+        margin-bottom: 1rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      input[type="text"],
+      input[type="tel"],
+      select {
+        width: 100%;
+        padding: 0.5rem;
+        font-size: 1rem;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+
       input[type="submit"],
       .whatsapp-btn {
-        display: inline-block;
-        padding: 0.3rem;
-        width: 400px; /* Sesuaikan lebar tombol sesuai kebutuhan */
-        height: 30px; /* Sesuaikan tinggi tombol sesuai kebutuhan */
-        margin-top: 1.5rem;
-        border-radius: 2%;
-        align-items: center;
-        text-align: center;
+        display: block;
+        width: 100%;
+        padding: 0.5rem;
+        font-size: 1rem;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+      }
+
+      input[type="submit"] {
+        background-color: #999;
+        color: #fff;
+        margin-bottom: 0.5rem;
+      }
+
+      .whatsapp-btn {
         background-color: #1de17c;
         color: #fff;
-        text-decoration: none;
-        border: none;
-        box-sizing: content-box;
-        border-radius: 1px;
-        cursor: pointer;
       }
 
       /* Hover state */
       input[type="submit"]:hover,
       .whatsapp-btn:hover {
-        background-color: #0056b3;
+        opacity: 0.8;
+      }
+
+      /* Footer styling */
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 1rem;
+        text-align: center;
       }
    </style>
 </head>
@@ -47,59 +132,75 @@
        </nav>
    </header>
    
-   <section id="hero">
-       <div class="hero-content">
-           <h1>ZARIQAFRO</h1>
-           <p>Mencipta masa depan dengan teknologi....</p>
-           <a href="#contact" class="btn">Hubungi Kami</a>
-       </div>
-       <div class="hero-image">
-           <img src="img/hero-image.jpg" alt="Proton">
-       </div>
-   </section>
-   
-   <!-- Formulir untuk detail pelanggan -->
-   <section id="contact">
-       <h2>Isi Maklumat Anda</h2>
-       <form action="https://script.google.com/macros/s/AKfycbxtqF6vZD88FXGj-umhd7IgOUKfBy0N1yn3I9iQZiGHYcuAFwygCg8j1CwVzdrrTM4X/exec" method="POST">
-           <div class="form-group">
-               <label for="location">Lokasi :</label>
-               <select id="location" name="entry.1234567890" required>
-                   <option value="">Pilih negeri</option>
-                   <option value="Johor">Johor</option>
-                   <option value="Kedah">Kedah</option>
-                   <option value="Kelantan">Kelantan</option>
-                   <option value="Melaka">Melaka</option>
-                   <option value="Negeri Sembilan">Negeri Sembilan</option>
-                   <option value="Pahang">Pahang</option>
-                   <option value="Perak">Perak</option>
-                   <option value="Perlis">Perlis</option>
-                   <option value="Pulau Pinang">Pulau Pinang</option>
-                   <option value="Sabah">Sabah</option>
-                   <option value="Sarawak">Sarawak</option>
-                   <option value="Selangor">Selangor</option>
-                   <option value="Terengganu">Terengganu</option>
-                   <option value="Wilayah Persekutuan Kuala Lumpur">Wilayah Persekutuan Kuala Lumpur</option>
-                   <option value="Wilayah Persekutuan Labuan">Wilayah Persekutuan Labuan</option>
-                   <option value="Wilayah Persekutuan Putrajaya">Wilayah Persekutuan Putrajaya</option>
-               </select>
+   <main>
+       <section id="hero">
+           <div class="hero-content">
+               <h1>ZARIQAFRO</h1>
+               <p>Mencipta masa depan dengan teknologi....</p>
+               <a href="#contact" class="btn">Hubungi Kami</a>
            </div>
-           <div class="form-group">
-               <label for="nama">Nama :</label>
-               <input type="text" id="nama" name="entry.0987654321" required>
+           <div class="hero-image">
+               <img src="img/hero-image.jpg" alt="Proton">
            </div>
-           <div class="form-group">
-               <label for="telefon">Nombor Telefon :</label>
-               <input type="tel" id="telefon" name="entry.1357924680" pattern="[6][0-9]{3}[0-9]{7,8}" placeholder="Contoh: 60123456789" required>
-           </div>
-           <button type="submit" class="whatsapp-btn">Submit</button>
-       </form>
-       <a href="https://wa.me/60188744910?text=Saya berminat untuk membuat tempahan kereta" class="whatsapp-btn">WhatsApp</a>
-   </section>
-   <!-- Bagian lain dari halaman web -->
+       </section>
+       
+       <!-- Formulir untuk detail pelanggan -->
+       <section id="contact">
+           <h2>Isi Maklumat Anda</h2>
+           <form action="https://script.google.com/macros/s/AKfycby2TOeDtGx9mUI_1MZqPcIWkmGw9c5LYZ90AOAqyzqpkyyy753BFhOB38AEwv8vG5cc/exec" method="POST">
+               <div class="form-group">
+                   <label for="location">Lokasi :</label>
+                   <select id="location" name="Lokasi" required>
+                       <option value="">Pilih negeri</option>
+                       <option value="Johor">Johor</option>
+                       <option value="Kedah">Kedah</option>
+                       <option value="Kelantan">Kelantan</option>
+                       <!-- Tambahkan pilihan negeri lainnya di sini -->
+                   </select>
+               </div>
+               <div class="form-group">
+                   <label for="nama">Nama :</label>
+                   <input type="text" id="nama" name="Nama" required>
+               </div>
+               <div class="form-group">
+                   <label for="telefon">Nombor Telefon :</label>
+                   <input type="tel" id="telefon" name="Nombor_Telefon" pattern="[6][0-9]{3}[0-9]{7,8}" required>
+               </div>
+               <input type="submit" value="Submit">
+           </form>
+           <a href="#" id="whatsapp-btn" class="whatsapp-btn">WhatsApp Now</a>
+       </section>
+   </main>
    
    <footer>
        <p>Hak Cipta © 2024 Persendirian</p>
    </footer>
+
+   <script>
+      document.getElementById('contact-form').addEventListener('submit', function(event) {
+         event.preventDefault(); // Menghentikan pengiriman formulir
+         var formData = new FormData(this);
+         fetch(this.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+               'Content-Type': 'application/x-www-form-urlencoded'
+            }
+         }).then(function(response) {
+            // Notifikasi
+            alert('Maklumat anda telah berjaya dihantar!');
+            // Redirect ke WhatsApp
+            window.location.href = "https://wa.me/60188744910?text=Saya berminat untuk membuat tempahan kereta";
+         }).catch(function(error) {
+            console.error('Error:', error);
+         });
+      });
+
+      document.getElementById('whatsapp-btn').addEventListener('click', function(event) {
+         event.preventDefault(); // Menghentikan tindakan default
+         // Redirect ke WhatsApp
+         window.location.href = "https://wa.me/60188744910?text=";
+      });
+   </script>
 </body>
 </html>
