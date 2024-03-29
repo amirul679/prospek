@@ -172,54 +172,67 @@
        <div class="form-group">
          <label for="telefon">Nombor Telefon :</label>
          <!-- Contoh untuk menambahkan nombor telefon yang benar -->
-         <input type="tel" id="telefon" name="Nombor_Telefon" pattern="[6][0-9]{3}[0-9]{7,8}" placeholder="Format: 601234567890" required>
+         <input type="tel" id="telefon" name="Nombor_Telefon" pattern="[6][0-9]{3}[0-9]{7,8}" placeholder="Format: 601234567890">
        </div>
        <input type="submit" value="Submit" class="submit-btn">
+       <!-- Ikon loading -->
+       <div class="loading-icon">
+         <div class="spinner-border text-primary" role="status">
+           <span class="visually-hidden">Loading...</span>
+         </div>
+       </div>
      </form>
      <!-- Menambahkan ikon loading ke dalam tombol WhatsApp -->
      <a href="#" id="whatsapp-btn" class="whatsapp-btn">
-       WhatsApp Now <img id="loading-icon" src="img/logo gif menarik.gif" class="loading-icon">
-     </a>
-   </section>
- </main>
- <footer>
-   <p>Hak Cipta © 2024 Persendirian</p>
- </footer>
- <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbyNMKDr2Khex8UprUXyMZ_3XPWMhY83Squ0UVCq3inCBmtgQrtZSIU_Avl0EKK-1Gmq/exec';
-  const form = document.getElementById('contact-form');
-  const whatsappBtn = document.getElementById('whatsapp-btn');
-  const loadingIcon = document.getElementById('loading-icon');
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    const formData = new FormData(form);
-    formData.append('Timestamp', new Date()); // Menambah timestamp ke dalam data yang dihantar
-    loadingIcon.style.display = 'inline'; // Tampilkan ikon loading
-    whatsappBtn.disabled = true; // Matikan tombol WhatsApp sementara
-    fetch(scriptURL, { method: 'POST', body: formData })
-      .then(response => {
-        loadingIcon.style.display = 'none'; // Sembunyikan ikon loading setelah selesai
-        whatsappBtn.disabled = false; // Aktifkan kembali tombol WhatsApp
-        if (response.ok) {
-          alert('Pendaftaran Anda Berjaya!');
-          form.reset(); // Reset formulir setelah berhasil
-        } else {
-          alert('Pendaftaran tidak berjaya. Sila cuba lagi.');
-        }
-      })
-      .catch(error => {
-        loadingIcon.style.display = 'none'; // Sembunyikan ikon loading jika terjadi kesalahan
-        whatsappBtn.disabled = false; // Aktifkan kembali tombol WhatsApp
-        console.error('Error!', error.message);
-      });
-  });
-  document.getElementById('whatsapp-btn').addEventListener('click', function(event) {
-    event.preventDefault(); // Menghentikan tindakan default
-    // Teks pesan yang ingin Anda kirimkan
-    var message = encodeURIComponent("Saya berminat untuk membuat tempahan kereta dengan tuan");
-    // Redirect ke WhatsApp dengan pesan yang ditentukan
-    window.location.href = "https://wa.me/60188744910?text=" + message;
-  });
-</script>
-</body>
-</html>
+      WhatsApp Now
+      </a>
+      
+         </section>
+       </main>
+       <footer>
+         <p>Hak Cipta © 2024 Persendirian</p>
+       </footer>
+       <script>
+         const scriptURL = 'https://script.google.com/macros/s/AKfycbyNMKDr2Khex8UprUXyMZ_3XPWMhY83Squ0UVCq3inCBmtgQrtZSIU_Avl0EKK-1Gmq/exec';
+         const form = document.getElementById('contact-form');
+         const whatsappBtn = document.getElementById('whatsapp-btn');
+         const loadingIcon = document.querySelector('.loading-icon');
+         form.addEventListener('submit', e => {
+           e.preventDefault();
+           const formData = new FormData(form);
+           formData.append('Timestamp', new Date()); // Menambah timestamp ke dalam data yang dihantar
+           loadingIcon.style.display = 'block'; // Tampilkan ikon loading
+           whatsappBtn.disabled = true; // Matikan tombol WhatsApp sementara
+           fetch(scriptURL, { method: 'POST', body: formData })
+             .then(response => {
+               loadingIcon.style.display = 'none'; // Sembunyikan ikon loading setelah selesai
+               whatsappBtn.disabled = false; // Aktifkan kembali tombol WhatsApp
+               if (response.ok) {
+                 alert('Pendaftaran Anda Berjaya!');
+                 form.reset(); // Reset formulir setelah berhasil
+                 // Redirect ke WhatsApp setelah mengklik tombol OK pada notifikasi
+                 whatsappRedirect();
+               } else {
+                 alert('Pendaftaran tidak berjaya. Sila cuba lagi.');
+               }
+             })
+             .catch(error => {
+               loadingIcon.style.display = 'none'; // Sembunyikan ikon loading jika terjadi kesalahan
+               whatsappBtn.disabled = false; // Aktifkan kembali tombol WhatsApp
+               console.error('Error!', error.message);
+             });
+         });
+      // Fungsi untuk mengarahkan pengguna ke WhatsApp
+      function whatsappRedirect() {
+      // Teks pesan yang ingin Anda kirimkan
+      const message = encodeURIComponent("Saya berminat untuk membuat tempahan kereta dengan tuan");
+      // URL ke WhatsApp dengan pesan yang ditentukan
+      const whatsappURL = "https://wa.me/60188744910?text=" + message;
+      // Arahkan pengguna ke URL WhatsApp
+      window.location.href = whatsappURL;
+      }
+      </script>
+      
+      </body>
+      </html>
+      ```
